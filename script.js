@@ -89,11 +89,11 @@ function initWorksCarousel() {
     let isAnimating = false;
 
     const projectNames = [
-        'Название проекта 1',
-        'Название проекта 2', 
-        'Название проекта 3',
-        'Название проекта 4',
-        'Название проекта 5'
+        'ПРОЕКТ 1 ДЛЯ SUNSHINE',
+        'ПРОЕКТ ДЛЯ LYRALEI 1', 
+        'ПРОЕКТ ДЛЯ LYRALEI 2',
+        'AMV SUNSHINE',
+        'ИНДИВИДУАЛЬНЫЙ ЗАКАЗ'
     ];
 
     const images = [
