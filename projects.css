@@ -39,8 +39,8 @@ body {
     background-image: url(img/pr_1_bg.png);
     background-size: cover;
     background-position: center;
-    height: 1080px;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -575,28 +575,28 @@ body {
 }
 
 /* ===== PROJECT 2 - LYRALEI 1 ===== */
-/* ===== PROJECT 2 ===== */
 .pr_preview_2 {
     margin: 0;
     background-image: url(img/work_2.jpg);
     background-size: cover;
     background-position: center;
-    height: 1080px;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
 }
+
 /* ===== PROJECT 3 - LYRALEI 2 ===== */
 .pr_preview_3 {
     margin: 0;
     background-image: url(img/work_3.jpg);
     background-size: cover;
     background-position: center;
-    height: 1080px;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -610,8 +610,8 @@ body {
     background-image: url(img/work_4.jpg);
     background-size: cover;
     background-position: center;
-    height: 1080px;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -625,8 +625,8 @@ body {
     background-image: url(img/work_5.jpg);
     background-size: cover;
     background-position: center;
-    height: 1080px;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

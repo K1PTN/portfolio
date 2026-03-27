@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио - Кузнецов Леонид</title>
+    <meta name="description" content="Портфолио видеомонтажёра Кузнецова Леонида. 6 лет опыта в создании видеоконтента, работа с After Effects и Premiere Pro.">
+    <meta name="theme-color" content="#0E1116">
+    <title>Портфолио - Кузнецов Леонид | Видеомонтажёр</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.cdnfonts.com/css/soledago" rel="stylesheet">
-<base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,14 +18,15 @@
         <button class="nav-btn" data-target="cooperation">СОТРУДНИЧЕСТВО</button>
     </nav>
 
+    <main>
     <!-- Block 1: Hero -->
     <section class="hero" id="hero">
         <!-- Хромированные декоративные элементы -->
-        <div class="chrome-decor left" style="width: 1200px; height: auto;">
-            <img src="img/bgpic1.png" alt="">
+        <div class="chrome-decor left">
+            <img src="img/bgpic1.png" alt="" aria-hidden="true">
         </div>
-        <div class="chrome-decor right" style="width: 1200px; height: auto;">
-            <img src="img/bgpic2.png" alt="">
+        <div class="chrome-decor right">
+            <img src="img/bgpic2.png" alt="" aria-hidden="true">
         </div>
 
         <!-- Большой хромированный текст -->
@@ -71,10 +73,10 @@
             <div class="about-right">
                 <!-- Хромированное кольцо на фоне -->
                 <div class="chrome-ring">
-                    <img src="img/bg_about.png" alt="">
+                    <img src="img/bg_about.png" alt="" aria-hidden="true">
                 </div>
                 <div class="about-photo">
-                    <img src="img/avatar_about.png" alt="About">
+                    <img src="img/avatar_about.png" alt="Леонид за работой">
                 </div>
             </div>
         </div>
@@ -87,11 +89,11 @@
         <div class="works-carousel">
             <!-- Превью слева -->
             <div class="work-preview left-preview" id="leftPreview">
-                <img src="img/work 5.jpg" alt="">
+                <img src="img/work_5.jpg" alt="Preview">
             </div>
 
             <!-- Кнопка назад -->
-            <button class="carousel-btn prev" id="prevBtn">‹</button>
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Предыдущий проект">‹</button>
 
             <!-- Основной слайд -->
             <div class="works-main">
@@ -116,11 +118,11 @@
             </div>
 
             <!-- Кнопка вперед -->
-            <button class="carousel-btn next" id="nextBtn">›</button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Следующий проект">›</button>
 
             <!-- Превью справа -->
             <div class="work-preview right-preview" id="rightPreview">
-                <img src="img/work 2.jpg" alt="">
+                <img src="img/work_2.jpg" alt="Preview">
             </div>
         </div>
     </section>
@@ -144,14 +146,15 @@
                 </p>
 
                 <div class="social-links">
-                    <a href="#" class="social-icon"><img src="img/Vector-1.png" class="social-icon-img" alt=""></a>
-                    <a href="#" class="social-icon"><img src="img/Vector.png" alt="" style="height: 45px;"></i></a>
-                    <a href="#" class="social-icon"><img src="img/Vector-2.png" alt="" style="height: 40px;"></i></a>
-                    <a href="#" class="social-icon"><img src="img/Vector-3.png" alt="" style="height: 30px; width: 40px;"></a>
+                    <a href="#" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener noreferrer"><img src="img/Vector-1.png" class="social-icon-img" alt="Telegram"></a>
+                    <a href="#" class="social-icon" aria-label="VK" target="_blank" rel="noopener noreferrer"><img src="img/Vector.png" class="social-icon-img" alt="VK"></a>
+                    <a href="#" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><img src="img/Vector-2.png" class="social-icon-img" alt="YouTube"></a>
+                    <a href="#" class="social-icon" aria-label="Email"><img src="img/Vector-3.png" class="social-icon-img social-icon-img--small" alt="Email"></a>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
