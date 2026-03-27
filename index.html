@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Кузнецов Леонид</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/soledago" rel="stylesheet">
+<base target="_blank">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <button class="nav-btn" data-target="about">ОБО МНЕ</button>
+        <button class="nav-btn" data-target="works">РАБОТЫ</button>
+        <button class="nav-btn" data-target="cooperation">СОТРУДНИЧЕСТВО</button>
+    </nav>
+
+    <!-- Block 1: Hero -->
+    <section class="hero" id="hero">
+        <!-- Хромированные декоративные элементы -->
+        <div class="chrome-decor left" style="width: 1200px; height: auto;">
+            <img src="img/bgpic1.png" alt="">
+        </div>
+        <div class="chrome-decor right" style="width: 1200px; height: auto;">
+            <img src="img/bgpic2.png" alt="">
+        </div>
+
+        <!-- Большой хромированный текст -->
+        <h1 class="hero-title">
+            <span class="chrome-text">ПОРТФОЛИО</span>
+        </h1>
+
+        <!-- Фото по центру -->
+        <div class="hero-photo">
+            <img src="img/ava.png" alt="Кузнецов Леонид">
+        </div>
+
+        <!-- Подписи снизу -->
+        <div class="hero-bottom-left">Кузнецов Леонид</div>
+        <div class="hero-bottom-right">Видео-монтажер</div>
+    </section>
+
+    <!-- Block 2: About -->
+    <section class="about" id="about">
+        <h2 class="section-title">ОБО МНЕ</h2>
+
+        <div class="about-content">
+            <div class="about-left">
+                <p class="about-text">
+                    Я — видеомонтажёр с 6-летним опытом работы в сфере создания видеоконтента. 
+                    За годы работы освоил полный цикл производства: от первичного монтажа 
+                    до цветокоррекции и визуальных эффектов. Постоянно слежу за трендами 
+                    индустрии и экспериментирую с новыми техниками, чтобы предлагать клиентам 
+                    современный и качественный результат.
+                </p>
+
+                <div class="skills">
+                    <div class="skill-item">
+                        <div class="skill-number chrome-numbers" data-count="99">99</div>
+                        <div class="skill-name">AFTER EFFECTS</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-number chrome-numbers" data-count="99">99</div>
+                        <div class="skill-name">PREMIER PRO</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <!-- Хромированное кольцо на фоне -->
+                <div class="chrome-ring">
+                    <img src="img/bg_about.png" alt="">
+                </div>
+                <div class="about-photo">
+                    <img src="img/avatar_about.png" alt="About">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 3: Works -->
+    <section class="works" id="works">
+        <h2 class="section-title">РАБОТЫ</h2>
+
+        <div class="works-carousel">
+            <!-- Превью слева -->
+            <div class="work-preview left-preview" id="leftPreview">
+                <img src="img/work 5.jpg" alt="">
+            </div>
+
+            <!-- Кнопка назад -->
+            <button class="carousel-btn prev" id="prevBtn">‹</button>
+
+            <!-- Основной слайд -->
+            <div class="works-main">
+                <div class="works-track" id="worksTrack">
+                    <div class="work-slide active" data-index="0">
+                        <img src="img/work_1.jpg" alt="Project 1">
+                    </div>
+                    <div class="work-slide" data-index="1">
+                        <img src="img/work_2.jpg" alt="Project 2">
+                    </div>
+                    <div class="work-slide" data-index="2">
+                        <img src="img/work_3.jpg" alt="Project 3">
+                    </div>
+                    <div class="work-slide" data-index="3">
+                        <img src="img/work_4.jpg" alt="Project 4">
+                    </div>
+                    <div class="work-slide" data-index="4">
+                        <img src="img/work_5.jpg" alt="Project 5">
+                    </div>
+                </div>
+                <div class="work-caption" id="workCaption">Название проекта 1</div>
+            </div>
+
+            <!-- Кнопка вперед -->
+            <button class="carousel-btn next" id="nextBtn">›</button>
+
+            <!-- Превью справа -->
+            <div class="work-preview right-preview" id="rightPreview">
+                <img src="img/work 2.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 4: Cooperation -->
+    <section class="cooperation" id="cooperation">
+        <h2 class="section-title">СОТРУДНИЧЕСТВО</h2>
+
+        <div class="cooperation-content">
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img src="img/qr.png" alt="QR Code">
+                </div>
+            </div>
+
+            <div class="cooperation-info">
+                <p class="cooperation-text">
+                    Отсканируйте QR-код — и мы начнём работать над вашим проектом. 
+                    Напишите в мессенджер, расскажите о задаче, и я предложу решение, 
+                    сроки и стоимость. Просто, быстро, без лишних формальностей.
+                </p>
+
+                <div class="social-links">
+                    <a href="#" class="social-icon"><img src="img/Vector-1.png" class="social-icon-img" alt=""></a>
+                    <a href="#" class="social-icon"><img src="img/Vector.png" alt="" style="height: 45px;"></i></a>
+                    <a href="#" class="social-icon"><img src="img/Vector-2.png" alt="" style="height: 40px;"></i></a>
+                    <a href="#" class="social-icon"><img src="img/Vector-3.png" alt="" style="height: 30px; width: 40px;"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

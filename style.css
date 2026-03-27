@@ -1,0 +1,702 @@
+@font-face {
+  font-family: 'Europeana';  /* Название, под которым будете использовать шрифт */
+  src: url('fonts/Europeana_One.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SOLEDAGO';
+    src: url('fonts/Soledago.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0E1116;
+    --text-color: #FFFFFF;
+    --hover-color: #C1CED6;
+    --accent-color: #7F909A;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'SOLEDAGO', 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-hidden {
+    transform: translateY(-150px);
+    opacity: 0;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 15px 50px;
+    font-family: 'Europeana', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   BLOCK 1: HERO (По фото 1)
+   ======================================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+/* Хромированные декоративные элементы по бокам */
+.chrome-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 600px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.chrome-decor.left {
+    left: -50px;
+}
+
+.chrome-decor.right {
+    right: -50px;
+}
+
+.chrome-decor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Большой хромированный текст поверх */
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.chrome-text {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 200px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #c1ced6 20%,
+        #7f909a 40%,
+        #4c5a67 60%,
+        #7f909a 80%,
+        #c1ced6 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 30px rgba(193, 206, 214, 0.5),
+        0 0 60px rgba(127, 144, 154, 0.3);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* Фото по центру поверх текста */
+.hero-photo {
+    position: relative;
+    z-index: 3;
+    width: 500px;
+    height: 600px;
+    margin-top: 50px;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Подписи снизу */
+.hero-bottom-left,
+.hero-bottom-right {
+    position: absolute;
+    bottom: 60px;
+    font-family: 'SOLEDAGO', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 4;
+}
+
+.hero-bottom-left {
+    left: 60px;
+}
+
+.hero-bottom-right {
+    right: 60px;
+}
+
+/* ========================================
+   BLOCK 2: ABOUT (По фото 2)
+   ======================================== */
+.about {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 60px;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.section-title {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 64px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-left {
+    padding-left: 40px;
+}
+
+.about-text {
+    font-family: 'Europeana', serif;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 500px;
+}
+
+/* Хромированные цифры навыков */
+.skills {
+    display: flex;
+    gap: 80px;
+}
+
+.skill-item {
+    text-align: left;
+}
+
+.skill-number {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #c1ced6 30%,
+        #7f909a 60%,
+        #4c5a67 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.skill-name {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Правая часть с фото и хромированным кольцом */
+.about-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chrome-ring {
+    position: absolute;
+    width: 1400px;
+    height: 1400px;
+    z-index: 1;
+}
+
+.chrome-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-photo {
+    position: relative;
+    z-index: 2;
+    padding-left: 200px;
+}
+
+.about-photo img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+/* ========================================
+   BLOCK 3: WORKS (По фото 3)
+   ======================================== */
+.works {
+    width: 100%;
+    min-height: 70vh;
+    padding: 0 60px;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.works-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Превью слева и справа */
+.work-preview {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.work-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопки карусели */
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Основной слайд */
+.works-main {
+    flex: 1;
+    max-width: 800px;
+    position: relative;
+}
+
+.works-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.work-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.work-slide.active {
+    opacity: 1;
+}
+
+.work-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-caption {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'SOLEDAGO', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ========================================
+   BLOCK 4: COOPERATION (По фото 4)
+   ======================================== */
+.cooperation {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 60px;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.cooperation-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.qr-section {
+    flex-shrink: 0;
+}
+
+.qr-code {
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cooperation-info {
+    max-width: 500px;
+}
+
+.cooperation-text {
+    font-family: 'Europeana', serif;
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-icon-img {
+    width: auto;
+    height: 50%;
+}
+
+.social-icon:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   АДАПТИВ
+   ======================================== */
+@media (max-width: 1400px) {
+    .chrome-text {
+        font-size: 150px;
+    }
+
+    .hero-photo {
+        width: 400px;
+        height: 480px;
+    }
+
+    .chrome-decor {
+        width: 300px;
+        height: 450px;
+    }
+
+    .nav {
+        gap: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        gap: 50px;
+        top: 30px;
+    }
+
+    .nav-btn {
+        padding: 12px 30px;
+        font-size: 11px;
+    }
+
+    .chrome-text {
+        font-size: 100px;
+    }
+
+    .hero-photo {
+        width: 350px;
+        height: 420px;
+    }
+
+    .chrome-decor {
+        width: 200px;
+        height: 300px;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        font-size: 20px;
+        bottom: 40px;
+    }
+
+    .hero-bottom-left {
+        left: 40px;
+    }
+
+    .hero-bottom-right {
+        right: 40px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-left {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .about-right {
+        order: -1;
+    }
+
+    .chrome-ring {
+        width: 350px;
+        height: 350px;
+    }
+
+    .about-photo {
+        width: 300px;
+        height: 375px;
+    }
+
+    .work-preview {
+        display: none;
+    }
+
+    .cooperation-content {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        gap: 15px;
+        top: 20px;
+        padding: 0 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .chrome-text {
+        font-size: 60px;
+        letter-spacing: 5px;
+    }
+
+    .hero-photo {
+        width: 280px;
+        height: 336px;
+    }
+
+    .chrome-decor {
+        width: 150px;
+        height: 225px;
+        opacity: 0.7;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        font-size: 16px;
+        bottom: 30px;
+    }
+
+    .hero-bottom-left {
+        left: 20px;
+    }
+
+    .hero-bottom-right {
+        right: 20px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .skill-number {
+        font-size: 80px;
+    }
+
+    .skill-name {
+        font-size: 16px;
+    }
+
+    .skills {
+        gap: 40px;
+    }
+
+    .chrome-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-photo {
+        width: 240px;
+        height: 300px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .work-caption {
+        font-size: 18px;
+    }
+
+    .qr-code {
+        width: 250px;
+        height: 250px;
+    }
+
+    .cooperation-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 8px;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+        font-size: 9px;
+    }
+
+    .chrome-text {
+        font-size: 40px;
+    }
+
+    .hero-photo {
+        width: 220px;
+        height: 264px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .skill-number {
+        font-size: 60px;
+    }
+}
