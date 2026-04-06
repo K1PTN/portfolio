@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E$CORT - Nikitata(amv)</title>
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <!-- Background Decorations -->
+    <div class="bg-decor left">
+        <img src="../img/bgpic1.png" alt="">
+    </div>
+    <div class="bg-decor right">
+        <img src="../img/bgpic2.png" alt="">
+    </div>
+
+    <!-- ===== HERO / PREVIEW SECTION ===== -->
+    <section class="pr_preview_3">
+        <h1 class="pr_name_1">E$CORT - Nikitata(amv)</h1>
+        
+        <div class="scroll_indicator_pr_1" onclick="scrollToAbout('about_pr_3')">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT PROJECT SECTION ===== -->
+    <section class="about_pr_1" id="about_pr_3">
+        <div class="about_text_pr_1">
+            <h2 class="about_title_pr_1">СТАДИИ РАБОТЫ</h2>
+            <ul class="about_list_pr_1">
+                <li class="about_item_pr_1">
+                    Этапы 1-2 (Подготовка): разработка второй концепции для LYRALEI, более экспериментальный визуальный стиль.
+                </li>
+                <li class="about_item_pr_1">
+                    Этап 3 (Съёмка): съёмка на локации с естественным светом и дополнительными источниками.
+                </li>
+                <li class="about_item_pr_1">
+                    Этапы 4-5 (Постпродакшен и сдача): монтаж с акцентом на атмосферу, цветокоррекция, VFX-элементы. Весь цикл занял 14 дней.
+                </li>
+            </ul>
+        </div>
+        
+        <div class="about_photo_pr_1">
+            <img src="img/pr_2_ava.png" alt="LYRALEI portrait">
+        </div>
+    </section>
+
+    <!-- ===== VIDEO SECTION WITH YOUTUBE IFRAME ===== -->
+    <section class="video_pr_1">
+        <div class="video_container_pr_1">
+            <iframe 
+                src="https://www.youtube.com/embed/5oK7sX8HrT8" 
+                title="ПРОЕКТ ДЛЯ LYRALEI 2" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <a href="../index.html" class="about_me_btn_pr_1">НАЗАД</a>
+    </section>
+
+    <!-- ===== CONTACT FORM SECTION ===== -->
+    <section class="contact-cta" id="contact">
+        <h2 class="section-title">СОТРУДНИЧЕСТВО</h2>
+        
+        <div class="contact-content">
+            <div class="contact-left">
+                <p class="contact-text">
+                    Готовы начать проект? Заполните форму ниже, и я свяжусь с вами 
+                    для обсуждения деталей. Обычно отвечаю в течение 24 часов.
+                </p>
+                
+                <div class="contact-features">
+                    <div class="feature-item">
+                        <span class="feature-number">01</span>
+                        <span class="feature-text">Обсуждение задачи</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">02</span>
+                        <span class="feature-text">Расчёт стоимости</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">03</span>
+                        <span class="feature-text">Начало работы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form id="tg-form" class="cta-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="ВАШЕ ФИО" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНА" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="project_name" placeholder="НАЗВАНИЕ ПРОЕКТА" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="budget" placeholder="БЮДЖЕТ (ОПЦИОНАЛЬНО)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="description" placeholder="ОПИШИТЕ ВАШУ ЗАДАЧУ..." rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-header">
+                <h3 class="footer-title">МОИ СОЦСЕТИ</h3>
+                <p class="footer-subtitle">Выберите удобный способ связи</p>
+            </div>
+            
+            <div class="social-links">
+                <!-- TELEGRAM: вставь ссылку в href -->
+                <a href="https://www.youtube.com/@LemonidoffProduction" class="social-btn" data-platform="Youtube">
+                    <img src="img/Vector-1.png" alt="YouTube">
+                    <span>YouTube</span>
+                </a>
+                
+                <!-- WHATSAPP: вставь ссылку в href -->
+                <a href="https://t.me/lemonadoffprod" class="social-btn" data-platform="Telegram">
+                    <img src="img/Vector.png" alt="Telegram">
+                    <span>Telegram</span>
+                </a>
+                
+                <!-- VKONTAKTE: вставь ссылку в href -->
+                <a href="https://www.instagram.com/lemonidoff_prod?igsh=MXJqOHcxcWNvb3I0NQ==" class="social-btn" data-platform="Instagram">
+                    <img src="img/Vector-2.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                
+                <!-- INSTAGRAM: вставь ссылку в href -->
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNvwDlPDhPngvcwfQkkqWGQbhszSKfStBrRcqXvFpGnXRWgtxfSvVmgBHPhzNLbwplbZnV" class="social-btn" data-platform="Mail">
+                    <img src="img/Vector-3.png" alt="Mail">
+                    <span>Mail</span>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 КУЗНЕЦОВ ЛЕОНИД. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="project1.js"></script>
+</body>
+</html>

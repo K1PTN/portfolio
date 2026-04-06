@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Кузнецов Леонид</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/soledago" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<base target="_blank">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <button class="nav-btn" data-target="about">ОБО МНЕ</button>
+        <button class="nav-btn" data-target="works">РАБОТЫ</button>
+        <button class="nav-btn" data-target="contact">СОТРУДНИЧЕСТВО</button>
+    </nav>
+
+    <!-- Block 1: Hero -->
+    <section class="hero" id="hero">
+        <!-- Хромированные декоративные элементы -->
+        <div class="chrome-decor left" style="width: 1200px; height: auto;">
+            <img src="img/bgpic1.png" alt="">
+        </div>
+        <div class="chrome-decor right" style="width: 1200px; height: auto;">
+            <img src="img/bgpic2.png" alt="">
+        </div>
+
+        <!-- Большой хромированный текст -->
+        <h1 class="hero-title">
+            <span class="chrome-text">ПОРТФОЛИО</span>
+        </h1>
+
+        <!-- Фото по центру -->
+        <div class="hero-photo">
+            <img src="img/ava.png" alt="Кузнецов Леонид">
+        </div>
+
+        <!-- Подписи снизу -->
+        <div class="hero-bottom-left">Кузнецов Леонид</div>
+        <div class="hero-bottom-right">Видео-монтажер</div>
+    </section>
+
+    <!-- Block 2: About -->
+    <section class="about" id="about">
+        <h2 class="section-title">ОБО МНЕ</h2>
+
+        <div class="about-content">
+            <div class="about-left">
+                <p class="about-text">
+                    Я — видеомонтажёр с 6-летним опытом работы в сфере создания видеоконтента. 
+                    За годы работы освоил полный цикл производства: от первичного монтажа 
+                    до цветокоррекции и визуальных эффектов. Постоянно слежу за трендами 
+                    индустрии и экспериментирую с новыми техниками, чтобы предлагать клиентам 
+                    современный и качественный результат.
+                </p>
+
+                <div class="skills">
+                    <div class="skill-item">
+                        <div class="skill-number chrome-numbers" data-count="89">89</div>
+                        <div class="skill-name">AFTER EFFECTS</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-number chrome-numbers" data-count="79">79</div>
+                        <div class="skill-name">PREMIER PRO</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <!-- Хромированное кольцо на фоне -->
+                <div class="chrome-ring">
+                    <img src="img/bg_about.png" alt="">
+                </div>
+                <div class="about-photo">
+                    <img src="img/avatar_about.png" alt="About">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 3: Works -->
+    <section class="works" id="works">
+        <h2 class="section-title">РАБОТЫ</h2>
+
+        <div class="works-carousel">
+            <!-- Превью слева -->
+            <div class="work-preview left-preview" id="leftPreview">
+                <img src="img/work 5.jpg" alt="">
+            </div>
+
+            <!-- Кнопка назад -->
+            <button class="carousel-btn prev" id="prevBtn">‹</button>
+
+            <!-- Основной слайд -->
+            <div class="works-main">
+                <div class="works-track" id="worksTrack">
+                    <div class="work-slide active" data-index="0">
+                        <img src="img/work_1.jpg" alt="Project 1">
+                    </div>
+                    <div class="work-slide" data-index="1">
+                        <img src="img/work_2.jpg" alt="Project 2">
+                    </div>
+                    <div class="work-slide" data-index="2">
+                        <img src="img/work_3.jpg" alt="Project 3">
+                    </div>
+                    <div class="work-slide" data-index="3">
+                        <img src="img/work_4.jpg" alt="Project 4">
+                    </div>
+                    <div class="work-slide" data-index="4">
+                        <img src="img/work_5.jpg" alt="Project 5">
+                    </div>
+                </div>
+                <div class="work-caption" id="workCaption">Название проекта 1</div>
+            </div>
+
+            <!-- Кнопка вперед -->
+            <button class="carousel-btn next" id="nextBtn">›</button>
+
+            <!-- Превью справа -->
+            <div class="work-preview right-preview" id="rightPreview">
+                <img src="img/work 2.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 4: Contact Form -->
+    <section class="contact-cta" id="contact">
+        <h2 class="section-title">СОТРУДНИЧЕСТВО</h2>
+        
+        <div class="contact-content">
+            <div class="contact-left">
+                <p class="contact-text">
+                    Готовы начать проект? Заполните форму ниже, и я свяжусь с вами 
+                    для обсуждения деталей. Обычно отвечаю в течение 24 часов.
+                </p>
+                
+                <div class="contact-features">
+                    <div class="feature-item">
+                        <span class="feature-number">01</span>
+                        <span class="feature-text">Обсуждение задачи</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">02</span>
+                        <span class="feature-text">Расчёт стоимости</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-number">03</span>
+                        <span class="feature-text">Начало работы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form id="tg-form" class="cta-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="ВАШЕ ФИО" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНА" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="project_name" placeholder="НАЗВАНИЕ ПРОЕКТА" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="budget" placeholder="БЮДЖЕТ (ОПЦИОНАЛЬНО)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="description" placeholder="ОПИШИТЕ ВАШУ ЗАДАЧУ..." rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 5: Footer / Social Links -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-header">
+                <h3 class="footer-title">МОИ СОЦСЕТИ</h3>
+                <p class="footer-subtitle">Выберите удобный способ связи</p>
+            </div>
+            
+            <div class="social-links">
+                <!-- TELEGRAM: вставь ссылку в href -->
+                <a href="https://www.youtube.com/@LemonidoffProduction" class="social-btn" data-platform="Youtube">
+                    <img src="img/Vector-1.png" alt="YouTube">
+                    <span>YouTube</span>
+                </a>
+                
+                <!-- WHATSAPP: вставь ссылку в href -->
+                <a href="https://t.me/lemonadoffprod" class="social-btn" data-platform="Telegram">
+                    <img src="img/Vector.png" alt="Telegram">
+                    <span>Telegram</span>
+                </a>
+                
+                <!-- VKONTAKTE: вставь ссылку в href -->
+                <a href="https://www.instagram.com/lemonidoff_prod?igsh=MXJqOHcxcWNvb3I0NQ==" class="social-btn" data-platform="Instagram">
+                    <img src="img/Vector-2.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                
+                <!-- INSTAGRAM: вставь ссылку в href -->
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNvwDlPDhPngvcwfQkkqWGQbhszSKfStBrRcqXvFpGnXRWgtxfSvVmgBHPhzNLbwplbZnV" class="social-btn" data-platform="Mail">
+                    <img src="img/Vector-3.png" alt="Mail">
+                    <span>Mail</span>
+                </a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 КУЗНЕЦОВ ЛЕОНИД. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="project1.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

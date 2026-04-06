@@ -1,0 +1,1356 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"') format('truetype');
+}
+
+@font-face {
+    font-family: 'SOLEDAGO';
+    src: url('fonts/Soledago.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0E1116;
+    --text-color: #FFFFFF;
+    --hover-color: #C1CED6;
+    --accent-color: #7F909A;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'SOLEDAGO', 'Playfair Display', serif;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+.nav {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-hidden {
+    transform: translateY(-150px);
+    opacity: 0;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 15px 50px;
+    font-family: 'Europeana', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   BLOCK 1: HERO
+   ======================================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.chrome-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 600px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.chrome-decor.left {
+    left: -50px;
+}
+
+.chrome-decor.right {
+    right: -50px;
+}
+
+.chrome-decor img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* БЕЛАЯ надпись ПОРТФОЛИО */
+.chrome-text {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 200px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.5),
+        0 0 60px rgba(255, 255, 255, 0.3),
+        0 0 90px rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* Hero фото с плавным размытием внизу */
+.hero-photo {
+    position: relative;
+    z-index: 3;
+    width: 500px;
+    height: 600px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.hero-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+}
+
+.hero-bottom-left,
+.hero-bottom-right {
+    position: absolute;
+    bottom: 60px;
+    font-family: 'SOLEDAGO', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 4;
+}
+
+.hero-bottom-left {
+    left: 60px;
+}
+
+.hero-bottom-right {
+    right: 60px;
+}
+
+/* ========================================
+   BLOCK 2: ABOUT
+   ======================================== */
+.about {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 60px;
+    position: relative;
+    background: var(--bg-color);
+}
+
+.section-title {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 64px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-left {
+    padding-left: 40px;
+}
+
+.about-text {
+    font-family: 'Europeana', serif;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    max-width: 500px;
+}
+
+.skills {
+    display: flex;
+    gap: 80px;
+}
+
+.skill-item {
+    text-align: left;
+}
+
+.skill-number {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #c1ced6 30%,
+        #7f909a 60%,
+        #4c5a67 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.skill-name {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.about-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chrome-ring {
+    position: absolute;
+    width: 1400px;
+    height: 1400px;
+    z-index: 1;
+}
+
+.chrome-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* About фото с плавным размытием внизу */
+.about-photo {
+    position: relative;
+    z-index: 2;
+    padding-left: 200px;
+    overflow: hidden;
+}
+
+.about-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.about-photo img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+}
+
+/* ========================================
+   BLOCK 3: WORKS - КАРУСЕЛЬ С ПЛАВНЫМИ ПРЕВЬЮ
+   ======================================== */
+.works {
+    width: 100%;
+    min-height: 70vh;
+    padding: 0 60px;
+    position: relative;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+
+.works-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Превью слева и справа - ПЛАВНАЯ АНИМАЦИЯ */
+.work-preview {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0.4;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transform: scale(0.9);
+    filter: grayscale(30%);
+}
+
+.work-preview:hover {
+    opacity: 0.7;
+    transform: scale(0.95);
+    filter: grayscale(0%);
+}
+
+.work-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.work-preview:hover img {
+    transform: scale(1.1);
+}
+
+/* Кнопки карусели */
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.1);
+}
+
+/* Основной слайд */
+.works-main {
+    flex: 1;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.works-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.work-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.work-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.work-slide.prev {
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.work-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Ховер на активном слайде */
+.work-slide.active:hover img {
+    transform: scale(1.03);
+}
+
+.work-slide.active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(14, 17, 22, 0.8) 0%,
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-slide.active:hover::after {
+    opacity: 1;
+}
+
+/* Подпись */
+.work-caption {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'SOLEDAGO', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-height: 30px;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.work-caption.changing {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* ========================================
+   BLOCK 4: CONTACT FORM
+   ======================================== */
+.contact-cta {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 60px;
+    position: relative;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-cta .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: start;
+}
+
+.contact-left {
+    padding-top: 40px;
+}
+
+.contact-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 400px;
+}
+
+.contact-features {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.feature-number {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #c1ced6 30%,
+        #7f909a 60%,
+        #4c5a67 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    width: 60px;
+}
+
+.feature-text {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-right {
+    position: relative;
+}
+
+.cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    padding: 15px 25px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 15px 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: 'SOLEDAGO', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   BLOCK 5: FOOTER
+   ======================================== */
+.footer {
+    width: 100%;
+    padding: 60px;
+    background: var(--bg-color);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.footer-title {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+}
+
+.social-btn {
+    flex: 0 0 auto;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: 'SOLEDAGO', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-btn:hover {
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.social-btn:hover img {
+    filter: brightness(0) invert(0.8) sepia(1) saturate(0) hue-rotate(180deg) brightness(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.copyright {
+    font-family: 'SOLEDAGO', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+/* ========================================
+   АДАПТИВ - МОБИЛЬНЫЕ (до 480px)
+   ======================================== */
+@media (max-width: 480px) {
+    /* Навигация */
+    .nav {
+        gap: 5px;
+        top: 10px;
+        padding: 0 5px;
+        flex-wrap: wrap;
+    }
+
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        border-width: 1px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 600px;
+        height: auto;
+        padding: 80px 0 40px;
+    }
+
+    .chrome-text {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+    .hero-photo {
+        width: 180px;
+        height: 220px;
+        margin-top: 20px;
+    }
+
+    .hero-photo::after {
+        height: 80px;
+    }
+
+    .chrome-decor {
+        width: 100px;
+        height: 150px;
+        opacity: 0.4;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        font-size: 12px;
+        bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .hero-bottom-left {
+        left: 15px;
+    }
+
+    .hero-bottom-right {
+        right: 15px;
+    }
+
+    /* About */
+    .about {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        gap: 30px;
+    }
+
+    .about-text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .skills {
+        gap: 30px;
+    }
+
+    .skill-number {
+        font-size: 48px;
+    }
+
+    .skill-name {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .about-photo {
+        width: 200px;
+        height: 250px;
+        padding-left: 0;
+    }
+
+    .about-photo::after {
+        height: 80px;
+    }
+
+    .chrome-ring {
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Works */
+    .works {
+        padding: 0 15px;
+        min-height: auto;
+    }
+
+    .works-carousel {
+        gap: 10px;
+    }
+
+    .works-main {
+        max-width: 100%;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .work-caption {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    /* Contact */
+    .contact-cta {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .contact-cta .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .contact-content {
+        gap: 30px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .feature-number {
+        font-size: 32px;
+        width: 40px;
+    }
+
+    .feature-text {
+        font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 12px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 11px;
+    }
+
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-title {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .footer-subtitle {
+        font-size: 12px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .social-btn {
+        width: 180px;
+        padding: 10px 20px;
+        font-size: 12px;
+        justify-content: center;
+    }
+
+    .social-btn img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .copyright {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ - ПЛАНШЕТЫ (481px - 768px)
+   ======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Навигация */
+    .nav {
+        gap: 10px;
+        top: 15px;
+        padding: 0 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 700px;
+        padding: 100px 0 50px;
+    }
+
+    .chrome-text {
+        font-size: 60px;
+        letter-spacing: 5px;
+    }
+
+    .hero-photo {
+        width: 250px;
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    .hero-photo::after {
+        height: 100px;
+    }
+
+    .chrome-decor {
+        width: 150px;
+        height: 200px;
+        opacity: 0.5;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        font-size: 16px;
+        bottom: 30px;
+    }
+
+    .hero-bottom-left {
+        left: 25px;
+    }
+
+    .hero-bottom-right {
+        right: 25px;
+    }
+
+    /* About */
+    .about {
+        padding: 60px 30px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        gap: 40px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .skills {
+        gap: 50px;
+    }
+
+    .skill-number {
+        font-size: 72px;
+    }
+
+    .skill-name {
+        font-size: 14px;
+    }
+
+    .about-photo {
+        width: 280px;
+        height: 350px;
+        padding-left: 0;
+    }
+
+    .about-photo::after {
+        height: 100px;
+    }
+
+    .chrome-ring {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* Works */
+    .works {
+        padding: 0 30px;
+    }
+
+    .works-carousel {
+        gap: 15px;
+    }
+
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .work-caption {
+        font-size: 18px;
+    }
+
+    /* Contact */
+    .contact-cta {
+        padding: 60px 30px;
+    }
+
+    .contact-cta .section-title {
+        font-size: 36px;
+    }
+
+    .contact-content {
+        gap: 50px;
+    }
+
+    .contact-text {
+        font-size: 16px;
+    }
+
+    .feature-number {
+        font-size: 40px;
+    }
+
+    .feature-text {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 14px 35px;
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 30px;
+    }
+
+    .footer-title {
+        font-size: 28px;
+    }
+
+    .footer-subtitle {
+        font-size: 14px;
+    }
+
+    .social-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .social-btn {
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ - ПЛАНШЕТЫ ЛАНДШАФТ / НЕТБУКИ (769px - 1024px)
+   ======================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Навигация */
+    .nav {
+        gap: 30px;
+        top: 25px;
+    }
+
+    .nav-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 800px;
+    }
+
+    .chrome-text {
+        font-size: 100px;
+        letter-spacing: 8px;
+    }
+
+    .hero-photo {
+        width: 350px;
+        height: 420px;
+    }
+
+    .chrome-decor {
+        width: 250px;
+        height: 350px;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        font-size: 20px;
+        bottom: 40px;
+    }
+
+    /* About */
+    .about {
+        padding: 80px 40px;
+    }
+
+    .section-title {
+        font-size: 48px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-left {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .about-text {
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+
+    .about-right {
+        order: -1;
+    }
+
+    .about-photo {
+        width: 350px;
+        height: 440px;
+        padding-left: 0;
+        margin: 0 auto;
+    }
+
+    .chrome-ring {
+        width: 450px;
+        height: 450px;
+    }
+
+    /* Works */
+    .works {
+        padding: 0 40px;
+    }
+
+    .work-preview {
+        width: 150px;
+        height: 225px;
+    }
+
+    /* Contact */
+    .contact-cta {
+        padding: 80px 40px;
+    }
+
+    .contact-content {
+        gap: 60px;
+    }
+
+    /* Footer */
+    .social-links {
+        gap: 20px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ - НОУТБУКИ (1025px - 1400px)
+   ======================================== */
+@media (min-width: 1025px) and (max-width: 1400px) {
+    .nav {
+        gap: 100px;
+    }
+
+    .chrome-text {
+        font-size: 150px;
+    }
+
+    .hero-photo {
+        width: 400px;
+        height: 480px;
+    }
+
+    .chrome-decor {
+        width: 300px;
+        height: 450px;
+    }
+
+    .about-photo {
+        padding-left: 100px;
+    }
+
+    .chrome-ring {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ - БОЛЬШИЕ ЭКРАНЫ (1401px+)
+   ======================================== */
+@media (min-width: 1401px) {
+    /* Базовые стили без изменений */
+}
+
+/* ========================================
+   АДАПТИВ - ОСОБЫЕ СЛУЧАИ
+   ======================================== */
+
+/* Горизонтальная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        height: 100vh;
+        padding: 60px 0 20px;
+    }
+
+    .chrome-text {
+        font-size: 48px;
+    }
+
+    .hero-photo {
+        width: 150px;
+        height: 180px;
+    }
+
+    .hero-bottom-left,
+    .hero-bottom-right {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: 20px;
+    }
+
+    .hero-bottom-left::after {
+        content: ' | ';
+        margin: 0 10px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+    .chrome-text {
+        font-size: 28px;
+    }
+
+    .hero-photo {
+        width: 150px;
+        height: 180px;
+    }
+
+    .skill-number {
+        font-size: 36px;
+    }
+}
+
+/* Retina / High DPI */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .chrome-text {
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Уменьшенная анимация для пользователей с предпочтениями */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
